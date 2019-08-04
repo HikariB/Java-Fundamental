@@ -1,8 +1,13 @@
 package com.hbLib.DesignPattern.BuliderPattern;
 
-public class Bottle implements Packing {
+import java.io.Serializable;
+
+public class Bottle implements Packing,Serializable {
     @Override
     public String pack() {
         return "Bottle";
     }
+
+
+
 }

@@ -19,6 +19,5 @@ public class StringTest {
         String completedString = builder.toString();
         //另一个是StringBuffer 其效率不高但是适用于多线程修改字符串
 
-
     }
 }
