@@ -22,8 +22,5 @@ public class InputAndOutput {
         //文件输入 与 输出 路径中的\ 需要多一个\ 即c:\\dir\\file.txt
         Scanner filein = new Scanner(Paths.get("myfile.txt"),"utf-8");
         PrintWriter out = new PrintWriter("myfile.txt","utf-8");
-
-
-
     }
 }

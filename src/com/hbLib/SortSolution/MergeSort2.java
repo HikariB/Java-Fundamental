@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 
 
-public class MergeSort2 extends ArraySort{
+public class MergeSort2 extends ArraySort {
     @Override
     public int[] sort(int[] pArr) {
         int[] resArr = Arrays.copyOf(pArr, pArr.length);
@@ -15,37 +15,37 @@ public class MergeSort2 extends ArraySort{
             return resArr;
 
         int[] tempArr = new int[pArr.length];
-        mergeSort(resArr, tempArr, 0, resArr.length);
+        mergeSort(resArr, tempArr, 0, resArr.length - 1);
         return resArr;
     }
 
     private void mergeSort(int[] fromArr, int[] tempArr, int head, int tail) {
-        if (tail == head)
+        if (tail <= head)
             return;
         int middle = (head + tail) / 2;
         mergeSort(fromArr, tempArr, 0, middle);
-        mergeSort(fromArr, tempArr, middle, tail);
+        mergeSort(fromArr, tempArr, middle+1, tail);
         merge(fromArr, tempArr, head, middle, tail);
     }
 
     private void merge(int[] fromArr, int[] tempArr, int head, int middle, int tail) {
         int i = head;
-        int j = middle;
+        int j = middle+1;
         int k = head;
-        while (i < middle && j < tail) {
+        while (i <= middle && j <= tail) {
             if (fromArr[i] <= fromArr[j])
                 tempArr[k++] = fromArr[i++];
             else
                 tempArr[k++] = fromArr[j++];
         }
 
-        while (i < middle)
+        while (i <= middle)
             tempArr[k++] = fromArr[i++];
-        while (j < tail)
+        while (j <= tail)
             tempArr[k++] = fromArr[j++];
-        for (int l = head; l < tail; l++) {
+
+        for (int l = head; l <= tail; l++) {
             fromArr[l] = tempArr[l];
         }
-
     }
 }
