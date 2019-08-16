@@ -26,6 +26,11 @@ public class QuickSort extends ArraySort {
         sort(resArr, insertPivot + 1, to);
     }
 
+    // 参考网上
+    // 数字交换过程更巧妙
+    // 注意条件判断，相等的情况发生；注意时从尾部先移动，若从头部先移动，则插入位置永远不会出现在头部
+    // 不稳定
+
     private int partion2(int[] resArr, int from, int to) {
         int pivot = resArr[from];
         while (from < to) {
@@ -44,39 +49,40 @@ public class QuickSort extends ArraySort {
 
 
     private void setFirstMiddle(int[] resArr, int from, int middle, int to) {
+        //头 不能最大
         if (resArr[from] > resArr[to] && resArr[from] > resArr[middle]) {
             if (resArr[middle] >= resArr[to])
                 swap(resArr, from, middle);
             else
                 swap(resArr, from, to);
         }
-
+        //头 不能最小
         if (resArr[from] < resArr[to] && resArr[from] < resArr[middle]) {
             if (resArr[middle] > resArr[to])
                 swap(resArr, from, to);
             else
                 swap(resArr, from, middle);
         }
-
     }
 
-    private int partion(int[] resArr, int from, int to) {
-        int pivot = resArr[from];
-        int p1 = from + 1;
-        int p2 = to;
-        while (p1 <= p2) {
-            while (p1 <= p2 && resArr[p1] < pivot ) {
-                p1++;
-            }
-            while (p1 <= p2 && resArr[p2] > pivot  ) {
-                p2--;
-            }
-            if (p2 >= p1)
-                swap(resArr, p1++, p2--);
-        }
-        swap(resArr, from, p2);
-        return p2;
 
+    private int partion(int[] resArr, int from, int to) {
+        // 记录初始位置
+        int pivot = from;
+        // 相等的时候表示已找到 pivot的位置
+        while (from < to) {
+            // 从末尾开始
+            // 注意全部元素相等时造成的越界 -1
+            while (resArr[to] >= resArr[pivot] && to > from)
+                to--;
+            while (resArr[from] <= resArr[pivot] && to > from)
+                from++;
+            if (to > from){
+                swap(resArr,to,from);
+            }
+        }
+        swap(resArr,from,pivot);
+        return from;
     }
 
 
