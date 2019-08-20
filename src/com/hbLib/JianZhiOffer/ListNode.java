@@ -1,4 +1,4 @@
-package com.hbLib.LeetCode._2LinkedList;
+package com.hbLib.JianZhiOffer;
 
 public class ListNode {
     int val;
