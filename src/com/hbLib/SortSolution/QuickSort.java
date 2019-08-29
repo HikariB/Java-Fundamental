@@ -20,7 +20,7 @@ public class QuickSort extends ArraySort {
         // 确定第一个元素的位置
         int middle = (from + to) / 2;
         setFirstMiddle(resArr, from, middle, to);
-        int pivot = resArr[from];
+//        int pivot = resArr[from];
         int insertPivot = partion(resArr, from, to);
         sort(resArr, from, insertPivot - 1);
         sort(resArr, insertPivot + 1, to);

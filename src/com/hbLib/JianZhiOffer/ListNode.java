@@ -1,10 +1,10 @@
 package com.hbLib.JianZhiOffer;
 
-public class ListNode {
+class ListNode {
     int val;
-    ListNode next;
+    ListNode next = null;
 
-    public ListNode(int x) {
-        val = x;
+    public ListNode(int val) {
+        this.val = val;
     }
 }
