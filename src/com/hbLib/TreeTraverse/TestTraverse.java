@@ -1,9 +1,10 @@
 package com.hbLib.TreeTraverse;
 
-import javafx.geometry.Pos;
-
 public class TestTraverse {
 
+    //      _4_
+    //   _2_   _6_
+    //  1   3 5   7
     public static void main(String[] args) {
         TreeNode root = new TreeNode(4);
         TreeNode node1 = new TreeNode(1);
