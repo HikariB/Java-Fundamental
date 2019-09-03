@@ -3,7 +3,6 @@ package com.hbLib;
 import java.util.*;
 
 
-
 public class DPPractice {
 
     public static void main(String[] args) {
@@ -229,12 +228,29 @@ public class DPPractice {
             return -1;
         int maxChange = index > 0 ? coins[index] : coins[-index - 2];
         int res = amount / maxChange;
-        amount -= res*maxChange;
+        amount -= res * maxChange;
 //        coinChange();
 
         return 0;
 
     }
+
+//    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+//        List<List<Integer>> res = new LinkedList<>();
+//        for (int i = 0; i < candidates.length; i++) {
+//            if (candidates[i] > target)
+//                break;
+//            List<List<Integer>> include = combinationSum(candidates, target - candidates[i]);
+//            List<List<Integer>> notInclude = combinationSum(candidates, target);
+//
+//        }
+//
+//    }
+//
+//    public List<List<Integer>> coreProcess(int[] candidates, int from, int to, int target) {
+//
+//    }
+
 
 }
 

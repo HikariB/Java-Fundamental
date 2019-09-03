@@ -2,6 +2,8 @@ package com.hbLib;
 
 public class StringTest {
     public static void main(String[] args) {
+
+
         String string = "hello";
         System.out.println(string.substring(0, 3));
         string += "Java";
@@ -18,6 +20,13 @@ public class StringTest {
         builder.append("hello");
         String completedString = builder.toString();
         //另一个是StringBuffer 其效率不高但是适用于多线程修改字符串
+
+
+
+        String str = "1";
+        System.out.println(String.join(",",str,str));
+
+
 
     }
 }
